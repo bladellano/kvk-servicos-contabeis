@@ -11,8 +11,6 @@ $app->get('/', function () {
 
 $app->get('/sobre-nos', function () {
 
-    // die('Ola');
-
     $page = new Page();
     $page->setTpl("sobre-nos");
 });

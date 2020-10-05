@@ -22,6 +22,10 @@ $(function () {
   $('a[href*=#]:not([href=#])').click(function () {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
+
+      if(!$(this.hash).length)/* Retorna ao index se não encontrar ids */
+        return location.href = './'+this.hash;
+
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html,body').animate({
@@ -48,7 +52,7 @@ $('.owl-carousel').owlCarousel({
       items: 3
     },
     1000: {
-      items: 5
+      items: 4
     }
   }
 })

@@ -48,6 +48,30 @@ body {
 
 /*==================*/
 
+ul.list-empresas-do-grupo{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 98%;
+    margin: 10px auto;
+    padding: 0;
+}
+.list-empresas-do-grupo li{
+    flex:1 1 48%;
+    margin: 1px;
+}
+.list-empresas-do-grupo li div{
+    text-align: center;
+}
+.list-empresas-do-grupo li button{
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-size: 16px;
+    background-color: #EEE;
+}
+.list-empresas-do-grupo .btn{
+    border-radius: 0;
+}
 .header-page {
     width: 100%;
     height: 150px;
@@ -663,7 +687,7 @@ figure.effect-bubba:hover h2, figure.effect-bubba:hover p {
 --------------------*/
 
 .partner-logo {
-    height: 80px;
+    height: 120px;
     text-align: center;
 }
 

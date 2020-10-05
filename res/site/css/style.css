@@ -243,7 +243,7 @@ section {
 --------------------*/
 
 .navbar-default {
-    background-color: #222;
+    background-color:var(--cor-secundaria) ;
     border-color: transparent
 }
 
@@ -299,6 +299,7 @@ section {
 }
 
 @media (min-width:768px) {
+
     .navbar-default {
         background-color: transparent;
         padding: 25px 0;
@@ -928,8 +929,27 @@ footer p a span {
     margin-top: 15px;
     font-size: 28px;
 }
+/* MOBILE */
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .carousel-inner .intro-carousel-lead-in {
+        font-size: initial;
+    }
+    .carousel-inner .intro-carousel-heading {
+        display: none;
+    }
+    .partner-logo img {
+        height: 45%;
+    }
+    .section-title h2 {
+        font-size: 20px;
+    }
+    .section-title p{
+        margin:0;
+    }
+    .navbar-default .navbar-brand {
+        padding: 15px 15px;
+    }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
     #back-top {
         position: fixed;
         bottom: 10px;

@@ -1,6 +1,7 @@
 <?php
-
+// 
 define("URL_BASE","http://grupokvk.local.com/");
+// define("URL_BASE","https://grupokvk.com.br/site/");
 
 define("YEAR",date('Y'));
 

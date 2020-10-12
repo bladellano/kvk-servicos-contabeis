@@ -19,8 +19,8 @@ class Page
     {
         $this->options = array_merge($this->defaults, $opts);
         $config = array(
-            "tpl_dir" => $_SERVER["DOCUMENT_ROOT"] . $tpl_dir,
-            "cache_dir" => $_SERVER["DOCUMENT_ROOT"] . "/views-cache/",
+            "tpl_dir" => self::reverse_strrchr($_SERVER['SCRIPT_FILENAME'],'/') . $tpl_dir,
+            "cache_dir" => self::reverse_strrchr($_SERVER['SCRIPT_FILENAME'],'/') . "/views-cache/",
             "debug" => false         
         );
 
@@ -28,7 +28,7 @@ class Page
         $this->tpl = new Tpl;
         
         $this->setData($this->options["data"]);       
-         if($this->options["_header"]===true) $this->tpl->draw("_header");
+        if($this->options["_header"]===true) $this->tpl->draw("_header");
 
     }
 
@@ -39,7 +39,7 @@ class Page
     }
     public function setTpl($name, $data = array(), $returnHTML = false)
     {
-        if(!file_exists($_SERVER["DOCUMENT_ROOT"].'/views/'.$name.'.html'))
+        if(!file_exists(self::reverse_strrchr($_SERVER['SCRIPT_FILENAME'],'/').'/views/'.$name.'.html'))
             $name = 'not-found';
 
         $this->setData($data);
@@ -49,6 +49,15 @@ class Page
     public function __destruct()
     {
         if($this->options["_header"]===true) $this->tpl->draw("_footer");
+    }
+
+    private static function reverse_strrchr($haystack, $needle)
+    {
+        $pos = strrpos($haystack, $needle);
+        if($pos === false) {
+            return $haystack;
+        }
+        return substr($haystack, 0, $pos + 1);
     }
 
 }

@@ -1,15 +1,14 @@
 <?php
 // 
-define("URL_BASE","http://grupokvk.local.com/");
-// define("URL_BASE","https://grupokvk.com.br/site/");
+define("URL_BASE", "http://127.0.0.1/kvk-servicos-contabeis/");
 
-define("YEAR",date('Y'));
+define("YEAR", date('Y'));
 
 // Email configuration
-define("MAIL_EMAIL","contato@sociedadenovomilenium.com.br");
-define("MAIL_PASSWORD","iL5pb2?6");
-define("MAIL_HOST","sociedadenovomilenium.com.br");
-define("MAIL_NAME_FROM","Gerenciador de Conteúdo");
+define("MAIL_EMAIL", "contato@kvkcontabeis.com.br");
+define("MAIL_PASSWORD", "H15032022e@");
+define("MAIL_HOST", "mail.kvkcontabeis.com.br");
+define("MAIL_NAME_FROM", "Portal Kvk");
 
 // Database configuration
 define("DB_SITE", [
@@ -29,14 +28,14 @@ define("DB_SITE", [
 
 // All functions
 
-function url(string $path):string
+function url(string $path): string
 {
-    if($path)
-        return URL_BASE. $path;
+    if ($path)
+        return URL_BASE . $path;
     return URL_BASE;
 }
 
-function message (string $message, string $type): string
+function message(string $message, string $type): string
 {
     return "<div class=\"message {$type}\">{$message}</div>";
 }
@@ -47,7 +46,7 @@ function toDatePtBr($date)
     return $DateTime->format("d/m/Y H:i:s");
 }
 
-function resume($string, $chars) 
+function resume($string, $chars)
 {
     return mb_strimwidth($string, 0, $chars + 3, "...");
 }

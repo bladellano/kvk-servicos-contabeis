@@ -354,33 +354,35 @@
                 <p>
             </div>
             <div class="col-md-6">
-                <form name="sentMessage" id="contactForm" novalidate="">
+                
+                <form name="sentMessage" id="contactForm">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Seu Nome *" id="name" required="" data-validation-required-message="Por favor, insira seu nome.">
-                                <p class="help-block text-danger"></p>
+                                <input type="text" class="form-control" placeholder="Seu Nome *" name="name" required="">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Seu E-mail *" id="email" required="" data-validation-required-message="Por favor, indique o seu endereço de e-mail.">
-                                <p class="help-block text-danger"></p>
+                                <input type="email" class="form-control" placeholder="Seu E-mail *" name="email" required="" >
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="phone" class="form-control" placeholder="Seu telefone *" name="phone" required="" >
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Sua mensagem *" id="message" required="" data-validation-required-message="Por favor, digite uma mensagem."></textarea>
-                                <p class="help-block text-danger"></p>
+                                <textarea class="form-control" placeholder="Sua mensagem *" name="message" required="" ></textarea>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 text-center">
-                            <div id="success"></div>
                             <button type="submit" class="btn">Enviar Mensagem</button>
                         </div>
                     </div>
